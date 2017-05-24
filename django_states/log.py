@@ -125,7 +125,7 @@ def _create_state_log_model(state_model, field_name, machine):
             auto_now_add=True, db_index=True,
             verbose_name=_('transition started at')
         )
-        on = models.ForeignKey(state_model, on_delete=models.SET_NULL, related_name=('%s_history' % field_name))
+        on = models.ForeignKey(state_model, on_delete=models.CASCADE, related_name=('%s_history' % field_name))
 
         class Meta:
             """Non-field Options"""
